@@ -8,11 +8,11 @@ class Ability
       note.readers.any? {|reader| reader == user}
     end
     can :edit, Note do |note|
-      note.user_id == user.id 
-    end 
+      note.user_id == user.id
+    end
     can :destroy, Note do |note|
-      note.user_id == user.id 
-    end   
+      note.user_id == user.id
+    end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
