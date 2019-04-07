@@ -1,2 +1,5 @@
 class UsersController < ApplicationController
-end   
+  def create
+    redirect_to '/sessions/create'
+  end
+end
