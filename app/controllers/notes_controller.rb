@@ -9,6 +9,10 @@ class NotesController < ApplicationController
   def new
   end
   def create
+    @note = Note.create(note_params)
+    note.user_id = session[:user_id]
+    note.save
+    redirect_to '/'
   end
   def update
     load_and_authorize_resource
