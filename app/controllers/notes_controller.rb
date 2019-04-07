@@ -16,6 +16,8 @@ class NotesController < ApplicationController
   end
   def update
     load_and_authorize_resource
+    @note.update(note_params)
+    redirect_to '/'
   end
   def edit
     load_and_authorize_resource
