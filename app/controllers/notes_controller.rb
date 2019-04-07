@@ -10,8 +10,8 @@ class NotesController < ApplicationController
   end
   def create
     @note = Note.create(note_params)
-    note.user_id = session[:user_id]
-    note.save
+    @note.user_id = session[:user_id]
+    @note.save
     redirect_to '/'
   end
   def update
