@@ -2,6 +2,7 @@ class NotesController < ApplicationController
 
 
   def show
+    load_and_authorize_resource
   end
   def index
   end
@@ -10,8 +11,10 @@ class NotesController < ApplicationController
   def create
   end
   def update
+    load_and_authorize_resource
   end
   def edit
+    load_and_authorize_resource
   end
 
   private
@@ -20,4 +23,4 @@ class NotesController < ApplicationController
     params.requite(:note).permit(:visible_to, :content)
   end
 
-end                 
+end
