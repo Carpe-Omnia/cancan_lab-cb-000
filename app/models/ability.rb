@@ -5,7 +5,7 @@ class Ability
 
   def initialize(user)
     can :read, Note do |note|
-
+      note.readers.any? {|reader| reader == user}
     end
     # Define abilities for the passed in user here. For example:
     #
